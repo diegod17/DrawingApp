@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src='/socket.io/socket.io.js'></script>
+    <title>Ajax</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+      
+    
+
+#members {
+
+  margin:1px ;
+  padding:1px;
+  /*
+  border:1px solid lightgrey;
+  */
+  text-align:center;
+}
+
+#members figure {
+  display:inline-block;
+  margin: 15px;
+  max-width: 100%;
+  /*
+  border:1px solid steelblue;
+  */
+}
+
+.redirect{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-self: center;
+}
+
+#members img {
+
+  display:inline-block;
+  max-width: 100%;
+}
+
+#members figcaption {
+   
+}​
+
+
+
+
+
+        
+    </style>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  </head>
+  <body>
+     <div id="members">
+    
+</div>
+  
+
+    
+   
+
+       <script type="text/javascript">
+
+
+
+        var members = document.getElementById("members");
+
+
+
+
+function loadImage(obj) {
+  var img = document.createElement("img");
+  const figure = document.createElement("figure");
+  const delButton = document.createElement("button");
+  delButton.innerText = "delete";
+  delButton.name = obj.fileName;
+  delButton.setAttribute( "onClick", "javascript: deleteImg(this.name);" );
+
+//  figure.style.margin = "50px 10px 20px 30px"
+  const figcaption = document.createElement("figcaption");
+  figcaption.innerText = obj.name;
+
+  img.src = obj.fileName;  // Give it address
+  img.style.height = '216px';
+  img.style.width = '216px';
+
+  figure.appendChild(img);
+  figure.appendChild(figcaption);
+  figure.appendChild(delButton);
+  members.appendChild(figure);
+  
+}
+
+        let socket = io();
+        let dataBase;
+
+        socket.on('dataBase', function (data) {
+        dataBase=data;
+        console.log(dataBase);
+        dataBase.forEach(element => loadImage(element));
+        });
+
+        socket.on('newImg', function (data) {
+        console.log('made');
+        loadImage(data);
+        });
+        //socket.emit('like',"img0.png",1);
+        function deleteImg(fileName){
+          socket.emit('deleteImg',fileName);
+        }
+
+        socket.on('updatedDatabase', function (data) {
+
+        var members = document.getElementById("members");
+        while (members.firstChild) {
+          members.removeChild(members.lastChild);
+        }
+        
+        dataBase=data;
+        dataBase.forEach(element => loadImage(element));
+        });
+
+        </script>
+  </body>
+</html>
+

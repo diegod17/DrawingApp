@@ -1,0 +1,201 @@
+<<<<<<< Updated upstream
+:root {}
+
+
+
+body {
+	margin: 0px;
+	padding: 30px;
+	background-color: #F8F0E3;
+	overflow: hidden;
+}
+
+canvas{
+	cursor:crosshair;
+	box-shadow: 0px 2px 9px 6px black;
+}
+
+.tools{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	margin-bottom: 20px;
+}
+
+.shapes{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	margin-bottom: 20px;
+}
+
+.submit{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	margin-top: 20px;
+	align-self: center;
+}
+
+.redirect{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-self: center;
+}
+.submit .name{
+	align-self: center;
+	margin: 0 15px;
+}
+
+.submit .post{
+	height: 30px;
+	width: 60px;
+	align-self: center;
+	margin: 0 15px;
+}
+
+.tools .colorField {
+	height: 30px;
+	width: 30px;
+	min-height: 30px;
+	min-width: 	30px;
+	cursor: pointer;
+	display: inline-block;
+	border-radius: 50%;
+	align-self: center;
+	margin: 0 15px;
+}
+
+.tools .eraser {
+	height: 30px;
+	width: 30px;
+	min-height: 30px;
+	min-width: 	30px;
+	cursor: pointer;
+	display: inline-block;
+	align-self: center;
+	margin: 0 15px;
+}
+
+.tools .background {
+	height: 30px;
+	width: 30px;
+	min-height: 30px;
+	min-width: 	30px;
+	/*cursor: url(bucket.cur),default;*/
+	cursor: pointer;
+	display: inline-block;
+	align-self: center;
+	margin: 0 15px;
+}
+
+.tools .button{
+	height: 30px;
+	width: 60px;
+	align-self: center;
+	margin: 0 15px;
+}
+
+.tools .colorPicker {
+	height: 30px;
+	width: 30px;
+	min-height: 30px;
+	min-width: 	30px;
+	cursor: pointer;
+	display: inline-block;
+	align-self: center;
+	margin: 0 15px;
+}
+
+.tools .brushSize {
+	align-self: center;
+	margin: 0 15px;
+=======
+:root {}
+
+body {
+	margin: 0px;
+	padding: 30px;
+	background-color: #F8F0E3;
+	overflow: hidden;
+}
+
+canvas{
+	cursor:pointer;
+	box-shadow: 0px 2px 9px 6px black;
+}
+
+.tools{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	margin-bottom: 20px;
+}
+
+.submit{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	margin-top: 20px;
+	align-self: center;
+}
+
+.submit .name{
+	align-self: center;
+	margin: 0 15px;
+}
+
+.submit .post{
+	height: 30px;
+	width: 60px;
+	align-self: center;
+	margin: 0 15px;
+}
+
+.tools .colorField {
+	height: 30px;
+	width: 30px;
+	min-height: 30px;
+	min-width: 	30px;
+	cursor: pointer;
+	display: inline-block;
+	border-radius: 50%;
+	align-self: center;
+	margin: 0 15px;
+}
+
+.tools .eraser {
+	height: 30px;
+	width: 30px;
+	min-height: 30px;
+	min-width: 	30px;
+	cursor: pointer;
+	display: inline-block;
+	align-self: center;
+	margin: 0 15px;
+}
+
+.tools .button{
+	height: 30px;
+	width: 60px;
+	align-self: center;
+	margin: 0 15px;
+}
+
+.tools .colorPicker {
+	height: 30px;
+	width: 30px;
+	min-height: 30px;
+	min-width: 	30px;
+	cursor: pointer;
+	display: inline-block;
+	align-self: center;
+	margin: 0 15px;
+}
+
+.tools .brushSize {
+	align-self: center;
+	margin: 0 15px;
+>>>>>>> Stashed changes
+}

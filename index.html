@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Draw</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  </head>
+
+  <body>
+    <h1 style="text-align:center;">Draw!</h1>
+        <hr>
+      <div class="field">
+        <div class="tools">
+
+          <input onClick="clearCanvas()" type="button" id="clearButton" value="Clear" class="button"/>
+          <input onClick="undo()" type="button" id="undoButton" value="Undo" class="button" />
+
+          <div onClick="changeColor(this)" class="colorField" style="background: black"></div>
+          <div onClick="changeColor(this)" class="colorField" style="background: red"></div>
+          <div onClick="changeColor(this)" class="colorField" style="background: blue"></div>
+          <div onClick="changeColor(this)" class="colorField" style="background: green"></div>
+          <div onClick="changeColor(this)" class="colorField" style="background: yellow"></div>
+
+          <input onInput="drawColor = this.value" type="color" id="colorPicker" class="colorPicker" value="#6a0dad">
+
+          <input type="image" class="eraser" src="eraser.png" alt="button" width="40" height="40" onClick="erase()">
+
+          <input type="image" class="background" src="background.png" alt="button" width="40" height="40" onClick="background()">
+
+          <label for="brushSize" class=" brushSize">Brush Size:</label>
+          <input type="range" min="2" max="50.5" value="2" id="brushSize" class="brushSize" onInput="drawSize = this.value">
+          
+        </div>
+
+        <div class="shapes">
+          <input type="image" class="rectangle" src="rect.png" alt="button" width="40" height="40" onClick="rectangle()">
+        </div>
+
+        <div style = "text-align:center;">
+         <canvas id="canvas"></canvas>
+        </div>
+        
+        <div class="submit">
+          <label for="username" class="name">Artist's Name:</label>
+          <input id="username" class="name" type="text" name="username" value="Name">
+          <br>
+          <input type="button" name="send" value="Post" onclick="setImage()">
+        </div>
+        <br>
+        <div class="redirect">
+          <input type="button" name="toGallery" value="To Gallery" onclick="location.href='/gallery';">
+        </div>
+      </div>
+
+
+    
+
+    
+
+  </body>
+  <script src='/socket.io/socket.io.js'></script>
+  <script src="draw.js"></script>
+  
+</html>
